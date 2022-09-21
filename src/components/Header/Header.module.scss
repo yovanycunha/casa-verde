@@ -1,0 +1,29 @@
+@use 'styles/colors.module.scss' as *;
+
+.container {
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2rem;
+
+  padding-top: 13px;
+
+  .itemContainer {
+    display: flex;
+    gap: 13px;
+
+    .item {
+      color: $grey;
+      text-decoration: none;
+
+      margin-top: auto;
+    }
+
+    .divider {
+      margin-top: auto;
+    }
+  }
+}

@@ -1,22 +1,24 @@
 const withImages = require('next-images');
 const withFonts = require('nextjs-fonts');
 
-const path = require('path');
-
 module.exports = withImages(
   withFonts({
     sassOptions: {
       cssModules: true,
-      includePaths: [path.join(__dirname, 'src/styles')],
+      includePaths: ['./src'],
+    },
+    images: {
+      domains: [],
+      deviceSizes: [360, 375, 768, 1024, 1440],
+      disableStaticImages: true,
+      formats: ['image/webp'],
     },
     pageExtensions: ['page.tsx'],
-    handleImages: ['jpg', 'jpeg', 'png', 'webp'],
-    images: {
-      domains: ['images.unsplash.com'],
-    },
+    fileExtensions: ['jpg', 'jpeg', 'png', 'webp'],
     webpack(config) {
       config.module.rules.push({
-        test: /\.svg$/,
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
         use: ['@svgr/webpack'],
       });
 

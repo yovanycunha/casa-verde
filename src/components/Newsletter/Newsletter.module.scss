@@ -1,0 +1,29 @@
+.container {
+  height: 400px;
+
+  display: flex;
+  flex-direction: row;
+
+  .headerWrapper {
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+  }
+
+  .backgroundsWrapper {
+    flex: 1 1;
+
+    .plant {
+      height: 100%;
+
+      background: url('./images/plant1.png');
+    }
+
+    .vector {
+      height: 100%;
+
+      background: url('./images/background-vector.png');
+      transform: rotate(-26.54deg);
+    }
+  }
+}
